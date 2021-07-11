@@ -426,7 +426,6 @@ impl WindowedSystem {
 
         let windowed_context = glutin::ContextBuilder::new()
             .with_gl(glutin::GlRequest::Specific(glutin::Api::OpenGlEs, (3, 0)))
-            .with_vsync(true)
             .build_windowed(gl_window, &events_loop)
             .unwrap();
 
