@@ -498,6 +498,9 @@ impl WindowedSystem {
         self.windowed_context.swap_buffers().unwrap();
         assert_eq!(unsafe { gl::GetError() }, gl::NO_ERROR);
     }
+    pub fn get_window(&self) -> &glutin::window::Window{
+        self.windowed_context.window()
+    }
 }
 
 use glutin::event_loop::EventLoop;
