@@ -401,6 +401,7 @@ impl WindowedSystem {
         dim: [usize; 2],
         events_loop: &glutin::event_loop::EventLoop<()>,
         title: &str,
+        vsync: bool,
     ) -> WindowedSystem {
         onein::assert_only_one_instance();
 
@@ -426,7 +427,7 @@ impl WindowedSystem {
 
         let windowed_context = glutin::ContextBuilder::new()
             .with_gl(glutin::GlRequest::Specific(glutin::Api::OpenGlEs, (3, 0)))
-            .with_vsync(true)
+            .with_vsync(vsync)
             .build_windowed(gl_window, &events_loop)
             .unwrap();
 
